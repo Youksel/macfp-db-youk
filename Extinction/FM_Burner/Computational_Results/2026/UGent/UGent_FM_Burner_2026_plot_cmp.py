@@ -4,6 +4,7 @@
 
 import sys
 import os
+from pathlib import Path
 
 # Change to script directory to ensure relative paths work correctly
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -22,6 +23,35 @@ import macfp
 import importlib
 importlib.reload(macfp) # use for development (while making changes to macfp.py) 
 import matplotlib.pyplot as plt
+
+plot_folders = [
+    "./Plots/",
+    "./Plots/Extinction/",
+    "./Plots/Temperature/Mean-temperature/Mean-temperature-X_O2=15.2/",
+    "./Plots/Temperature/Mean-temperature/Mean-temperature-X_O2=16.8/",
+    "./Plots/Temperature/Mean-temperature/Mean-temperature-X_O2=21/",
+    "./Plots/Temperature/RMS-temperature/thermocouple-correction/",
+    "./Plots/Temperature/RMS-temperature/X_O2=15.2/",
+    "./Plots/Temperature/RMS-temperature/X_O2=16.8/",
+    "./Plots/Temperature/RMS-temperature/X_O2=21/",
+    "./Plots/Velocity/Vertical_Velocity/",
+    "./Plots/Soot/Mean_soot_X_O2=15.2/",
+    "./Plots/Soot/Mean_soot_X_O2=16.8/",
+    "./Plots/Soot/Mean_soot_X_O2=21/",
+    "./Plots/Radiative-power/",
+    "./Plots/Transient-plots/",
+    "./Plots/PDFs/Soot_PDFs/X_O2=15.2/",
+    "./Plots/PDFs/Soot_PDFs/X_O2=16.8/",
+    "./Plots/PDFs/Soot_PDFs/X_O2=21",
+    "./Plots/PDFs/Temperature_PDFs/TC_correction/",
+    "./Plots/PDFs/Temperature_PDFs/X_O2=21/",
+    "./Plots/PDFs/Temperature_PDFs/X_O2=16.8/",
+    "./Plots/PDFs/Temperature_PDFs/X_O2=15.2/",
+]
+
+for folder in plot_folders:
+    Path(folder).mkdir(parents=True, exist_ok=True)
+
 
 macfp.dataplot(config_filename='UGent_FM_Burner_2026_cmp_config.csv',
                institute='UGent',
