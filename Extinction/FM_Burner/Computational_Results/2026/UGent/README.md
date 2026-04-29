@@ -122,6 +122,10 @@ Comments: .
 
 ### Special issues/problems
 Temperature statistics, RMS and PDF, deviate significantly from the experiment. The reason is likely related to the thermocouple compensation. An appendix has been added to the UGent submission to elaborate this issue.
+
+T_g     = simulated gas temperature
+T_tc    = calculated thermocouple response
+T_g,rec = reconstructed gas temperature, with a convective time-scale calibrated to bring the PDF/RMS predictions close to the reported experimental values.
 ------------------
 
 ### Relevant publications
